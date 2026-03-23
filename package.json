@@ -1,0 +1,13 @@
+{
+  "name": "discord-afk-bots",
+  "version": "1.0.0",
+  "description": "Discord bot that manages AFK Mineflayer bots",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "discord.js": "^14.14.0",
+    "mineflayer": "^4.5.0"
+  }
+}
