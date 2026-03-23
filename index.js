@@ -2,14 +2,14 @@ const { Client, GatewayIntentBits, SlashCommandBuilder, Routes } = require('disc
 const { REST } = require('@discordjs/rest');
 const mineflayer = require('mineflayer');
 
-// --- Environment Variables ---
-const DISCORD_TOKEN = process.env.DISCORD_TOKEN;
-const CLIENT_ID = process.env.CLIENT_ID;
-const GUILD_ID = process.env.GUILD_ID;
+// --- כאן שמים את הטוקן שלך ישירות בקוד ---
+const DISCORD_TOKEN = 'PASTE_YOUR_NEW_TOKEN_HERE';
+const CLIENT_ID = 'PASTE_YOUR_CLIENT_ID_HERE'; // Client ID מה־Discord Developer Portal
+const GUILD_ID = 'PASTE_YOUR_GUILD_ID_HERE';   // ה‑Server ID של השרת שלך
 
 // --- Discord Client Setup ---
 const client = new Client({ intents: [GatewayIntentBits.Guilds] });
-let bots = [];
+let bots = []; // כאן נשמרים כל הבוטים
 
 // --- Register Slash Commands ---
 const commands = [
@@ -18,12 +18,12 @@ const commands = [
     .setDescription('AFK bot joins a server')
     .addStringOption(opt => opt.setName('ip').setDescription('Server IP').setRequired(true))
     .addStringOption(opt => opt.setName('name').setDescription('Bot username').setRequired(true)),
-    
+
   new SlashCommandBuilder()
     .setName('leave')
     .setDescription('AFK bot leaves the server')
     .addStringOption(opt => opt.setName('name').setDescription('Bot username').setRequired(true)),
-    
+
   new SlashCommandBuilder()
     .setName('list')
     .setDescription('List all AFK bots')
@@ -44,6 +44,7 @@ client.on('interactionCreate', async interaction => {
     const ip = interaction.options.getString('ip');
     const username = interaction.options.getString('name');
 
+    // יוצרים בוט Mineflayer חדש ומכניסים למערך
     const bot = mineflayer.createBot({
       host: ip,
       username,
