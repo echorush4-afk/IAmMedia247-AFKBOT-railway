@@ -3,9 +3,9 @@ const { REST } = require('@discordjs/rest');
 const mineflayer = require('mineflayer');
 
 // --- כאן שמים את הטוקן שלך ישירות בקוד ---
-const DISCORD_TOKEN = 'PASTE_YOUR_NEW_TOKEN_HERE';
-const CLIENT_ID = 'PASTE_YOUR_CLIENT_ID_HERE'; // Client ID מה־Discord Developer Portal
-const GUILD_ID = 'PASTE_YOUR_GUILD_ID_HERE';   // ה‑Server ID של השרת שלך
+const DISCORD_TOKEN = 'MTQ4NTY1NDY1OTgzNzQ2NDcwOA.GnoUTg.SS0tymafSaNvaAYgVjerysajTehSY3hVFdrFOo';
+const CLIENT_ID = 'MTQ4NTY1NDY1OTgzNzQ2NDcwOA.GnoUTg.SS0tymafSaNvaAYgVjerysajTehSY3hVFdrFOo'; // Client ID מה־Discord Developer Portal
+const GUILD_ID = '1460719520212586518';   // ה‑Server ID של השרת שלך
 
 // --- Discord Client Setup ---
 const client = new Client({ intents: [GatewayIntentBits.Guilds] });
